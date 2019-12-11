@@ -1,0 +1,19 @@
+.l-center {
+  box-sizing: content-box;
+
+  @include desktop {
+    margin: 0 auto;
+    width: $desktop-width;
+    padding: 0 $desktop-padding;
+  }
+
+  @include tablet {
+    padding: 0 $tablet-padding;
+  }
+
+  @include mobile {
+    margin: 0 auto;
+    width: $mobile-width;
+    padding: 0;
+  }
+}

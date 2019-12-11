@@ -1,0 +1,57 @@
+@import '~breakpoint-sass/stylesheets/breakpoint';
+
+$link-states: '&:link, &:active, &:hover, &:visited';
+$nbsp: '\00a0';
+
+$header-height: 75px;
+$header-height_mobile: 50px;
+$layout-logo-width: 160px;
+$layout-logo-height: 60px;
+@function columns-width($column-width, $gutter-width, $columns, $extra-gutters) {
+  @return ($column-width + $gutter-width) * $columns + ($extra-gutters - 1) * $gutter-width;
+}
+$desktop-column: 70px;
+$desktop-gutter: 30px;
+$desktop-padding: 20px;
+@function desktop-columns($columns, $extra-gutters: 0) {
+  @return columns-width($desktop-column, $desktop-gutter, $columns, $extra-gutters);
+}
+$tablet-column: 40px;
+$tablet-gutter: 20px;
+$tablet-padding: 20px;
+@function tablet-columns($columns, $extra-gutters: 0) {
+  @return columns-width($tablet-column, $tablet-gutter, $columns, $extra-gutters);
+}
+$desktop-width: 1150px; // desktop-columns(12) !default; // 1170px;
+$tablet-width: tablet-columns(12) !default; // 700px;
+$mobile-padding: 20px;
+$mobile-padding-v: 30px;
+$mobile-width: 320px;
+$desktop-full-width: $desktop-width + $desktop-padding * 2;
+$tablet-full-width: $tablet-width + $tablet-padding * 2;
+$maxi-tablet-width: ($desktop-full-width + $tablet-full-width) / 2;
+$mobile-full-width: $mobile-width;// + $mobile-padding * 2;
+
+$inner-width: 750px;
+$sidebar-width: $mobile-full-width;
+$scroll-width: 17px;
+$padding: 25px;
+
+@function make-mq-lt($width) { @return max-width $width + $scroll-width; }
+@function make-mq-gt($width) { @return $width + $scroll-width + 1px; }
+
+$mq-desktop: make-mq-gt($desktop-full-width);
+$mq-desktop-tablet: make-mq-gt($tablet-full-width);
+$mq-tablet: join($mq-desktop-tablet, $desktop-full-width + $scroll-width);
+$mq-tablet-mobile: make-mq-lt($desktop-full-width);
+$mq-maxi-tablet: make-mq-gt($maxi-tablet-width);
+$mq-mini-tablet: make-mq-lt($maxi-tablet-width);
+$mq-mobile: make-mq-lt($tablet-full-width);
+
+@mixin desktop { @include mq($mq-desktop) { @content; } }
+@mixin desktop-tablet { @include mq($mq-desktop-tablet) { @content; } }
+@mixin tablet { @include mq($mq-tablet) { @content; } }
+@mixin tablet-mobile { @include mq($mq-tablet-mobile) { @content; } }
+@mixin maxi-tablet { @include mq($mq-maxi-tablet) { @content; } }
+@mixin mini-tablet { @include mq($mq-mini-tablet) { @content; } }
+@mixin mobile { @include mq($mq-mobile) { @content; } }
