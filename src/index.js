@@ -1,24 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import reducer from './redux/combineReducers';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import createSagaMiddleware from 'redux-saga';
 import './assets/index.scss';
-// import './index.css';
 
-import Routes from './routes';
+import Routes from './routes/routes';
+import Header from './components/header';
 
-import { watchRequestPicture } from './redux/modules/picture/actions'
-const sagaMiddleware = createSagaMiddleware()
+import { watchRequestPicture } from './redux/modules/picture/actions';
+const sagaMiddleware = createSagaMiddleware();
 
-const composeEnhancers = composeWithDevTools({})
+const composeEnhancers = composeWithDevTools({});
 const store = createStore(reducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
 sagaMiddleware.run(watchRequestPicture);
 
 ReactDOM.render(
   <Provider store={store}>
-    <Routes />
+    <BrowserRouter>
+      <div className="l-page-container">
+        <Header />
+        <Routes />
+      </div>
+    </BrowserRouter>
   </Provider>
   , document.getElementById('root'));

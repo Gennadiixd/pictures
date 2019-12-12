@@ -1,17 +1,21 @@
 import React from 'react';
 import Picture from '../../components/picture';
 
-export default function View({ fetchPicture, importDateTime, pictureUrl, title }) {
+export default function View({
+  fetchPicture,
+  picture: { importDateTime, pictureUrl, title }
+}) {
+
   return (
     <div>
       Main
       <Picture
-        {...{ title }}
+        {...{ pictureUrl }}
       />
       <button
         onClick={fetchPicture}
       >
-        click
+        Загрузить
       </button>
     </div>
   )
