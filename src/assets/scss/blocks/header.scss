@@ -1,5 +1,66 @@
-.header-container {
+.header{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  margin: 1.3rem 0 2.5rem  0;
+}
+
+nav {
   display: flex;
+  a {
+    margin: 1.3rem 1.9rem;
+  }
+}
+
+//TODO: remove to approptiate folder!!!
+
+.--framed{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  padding: 4.9rem 1.8rem;
+}
+
+.content-main{
+  flex-direction: column;
+}
+
+.btn-primary{
+  background: #006896 0% 0% no-repeat padding-box;
+  box-shadow: 0px 2px 2px #0000003D;
+  border-radius: 2px;
+  color: white;
+  border: 0;
+  width: 10.5rem;
+  height: 2.3rem;
+}
+
+.-main-image-container{
+  width: 453px;
+  height: 252px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 1.9rem;
+}
+
+.-main-image{
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  display: flex;
+}
+
+.-centering-main-axis{
+  justify-content: center;
+}
+
+.-centering-cross-axis{
+  align-items: center;
+}
+
+.-centering-all{
+  justify-content: center;
+  align-items: center;
 }
 
 .active {

@@ -7,16 +7,16 @@ export default function View({
 }) {
 
   return (
-    <div>
-      Main
+    <>
       <Picture
         {...{ pictureUrl }}
       />
       <button
         onClick={fetchPicture}
+        className="-btn btn-primary"
       >
         Загрузить
       </button>
-    </div>
+    </>
   )
 }

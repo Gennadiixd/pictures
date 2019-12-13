@@ -21,10 +21,8 @@ sagaMiddleware.run(watchRequestPicture);
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <div className="l-page-container">
-        <Header />
-        <Routes />
-      </div>
+      <Header />
+      <Routes />
     </BrowserRouter>
   </Provider>
   , document.getElementById('root'));
