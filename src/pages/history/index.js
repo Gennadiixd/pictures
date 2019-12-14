@@ -1,19 +1,19 @@
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import * as S from '../../redux/modules/picture/selectors';
+import { removeHistoryItemAC } from '../../redux/modules/picture/actions';
 
-import { getPictureAC } from '../../redux/modules/picture/actions';
 import View from './view';
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPicture: bindActionCreators(getPictureAC, dispatch),
+    removeHistoryItem: bindActionCreators(removeHistoryItemAC, dispatch),
   }
 }
 
 const mapStateToProps = (state) => {
   return {
-    picture: S.getPictureSelector(state),
+    history: S.getHistory(state),
     loading: S.getLoadingSelector(state),
     error: S.getErrorSelector(state),
   }

@@ -3,13 +3,13 @@ import Picture from '../../components/picture';
 
 export default function View({
   fetchPicture,
-  picture: { importDateTime, pictureUrl, title }
+  picture: { pictureUrl }
 }) {
-
   return (
     <>
       <Picture
         {...{ pictureUrl }}
+        element = '-main-image'
       />
       <button
         onClick={fetchPicture}

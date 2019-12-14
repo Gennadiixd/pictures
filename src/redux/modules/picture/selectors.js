@@ -13,10 +13,9 @@ export const getInitStateSelector = (state) => {
   return state.picture.initState;
 }
 
-// export const getPictureStore = (state) => {
-//   if (state.picture.length) return state.picture
-//   else return M.Picture()
-// }
+export const getHistory = (state) => {
+  return state.picture.history;
+}
 
 export const getPictureDataSelector = (state) => {
   if (!state.picture.history.length) return new M.Picture().history;
