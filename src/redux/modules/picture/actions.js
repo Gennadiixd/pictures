@@ -13,7 +13,8 @@ const requestPictureSuccessAC = (picture) => {
     payload: {
       pictureUrl: picture.data.image_original_url,
       importDateTime: getDateTimeNow(),
-      title: picture.data.title
+      title: picture.data.title,
+      id: picture.data.id,
     }
   }
 }

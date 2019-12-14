@@ -1,21 +1,3 @@
-// export const eventListener = (e) => {
-//   const canHandle = (action) => {
-//     return !!eventHandlers[action];
-//   }
-
-//   const handle = (action, ...args) => {
-//     eventHandlers[action](...args);
-//   }
-
-//   const eventHandlers = {
-//     remove: (payload) => {
-//       removeHistoryItem(payload);
-//     }
-//   }
-
-//   if (canHandle(e.action)) handle(e.action, e.payload);
-// }
-
 const registerEventHandlers = (arrayWithHandlers, _that) => {
   //handler - obj {key = event type, value = handler for this type of event}
   for (const handler of arrayWithHandlers) {
@@ -28,8 +10,7 @@ const registerEventHandlers = (arrayWithHandlers, _that) => {
 export class EventListener {
   constructor(...args) {
     this.eventHandlers = {};
-    registerEventHandlers(args, this)
-    console.log(this.eventHandlers)
+    registerEventHandlers(args, this);
   }
 
   canHandle = (action) => {
@@ -42,6 +23,8 @@ export class EventListener {
 
   listen = (event) => {
     if (this.canHandle(event.action)) {
+      event.stopPropagation();
+      event.nativeEvent.stopPropagation();
       this.handle(event.action, event.payload);
     }
   }

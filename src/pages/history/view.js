@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import HistoryItem from './history-item';
-import Pagination from './pagination';
+import Pagination from '../../components/pagination';
 import { EventListener } from '../../helpers/history-event-handler';
 
 export default function History({ history, removeHistoryItem }) {
@@ -17,7 +17,10 @@ export default function History({ history, removeHistoryItem }) {
       >
         {
           (page, index) => (
-            <HistoryItem {...{ ...page, index }} />
+            <HistoryItem
+              {...{ ...page, index }}
+              key={page.id + page.importDateTime}
+            />
           )
         }
       </Pagination>

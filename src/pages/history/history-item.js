@@ -1,6 +1,6 @@
 import React from 'react';
-// picture: { importDateTime, pictureUrl, title }
 import Picture from '../../components/picture';
+import garbageBin from '../../assets/svg/garbage-bin.svg'
 
 export default function HistoryItem({
   importDateTime,
@@ -21,12 +21,17 @@ export default function HistoryItem({
           {...{ pictureUrl }}
           element='-history-image'
         />
+        {/* <div
+          className="-btn-delete"
+        >
+
+        </div> */}
         <button
           className="-btn-delete"
           onClick={fireHandler}
         >
-          D
-      </button>
+          <img src={garbageBin} className="-icon"/>
+        </button>
       </div>
       <div className="-description col-7">
         <p className="-description-text"> {title}</p>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { withRouter } from "react-router";
 import { getCurrentPageName } from '../../helpers/pages-helper';
 import { useHistory } from "react-router-dom";
+import arrow from '../../assets/svg/arrow.svg'
 
 export default function LayoutMain({ children, routesConfig }) {
   let history = useHistory();
@@ -23,7 +23,7 @@ export default function LayoutMain({ children, routesConfig }) {
           onClick={goBack}
           className="btn btn-go-back"
         >
-          {'<-'}
+          <img src={arrow} className="-icon" />
         </button>
       </div>
     )

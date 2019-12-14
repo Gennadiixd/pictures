@@ -19,6 +19,7 @@ export default function Pagination({ items, perPage, children }) {
           if (index < itemsPerPage) {
             return children(page, index);
           }
+          return null;
         })
       }
       {hasMoreItems() && (
