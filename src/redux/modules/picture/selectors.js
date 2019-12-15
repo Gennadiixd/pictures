@@ -1,31 +1,33 @@
 import { createSelector } from 'reselect';
 import * as M from './models';
+const { getIn } = require('immutable');
 
 export const getErrorSelector = (state) => {
-  return state.picture.error;
+  return state.picture.get('error');
 }
 
 export const getLoadingSelector = (state) => {
-  return state.picture.loading;
+  return state.picture.get('loading');
 }
 
 export const getInitStateSelector = (state) => {
-  return state.picture.initState;
+  return state.picture.get('initState');
 }
 
 export const getHistory = (state) => {
-  return state.picture.history;
+  return state.picture.get('history').toJS();
 }
 
 export const getPictureDataSelector = (state) => {
-  if (!state.picture.history.length) return new M.Picture().history;
-  return state.picture.history;
+  const history = getIn(state, ['picture', 'history'], M.history);
+  if (history.size !== 0){
+    return history.get(-1);
+  }
+  return M.history.get(-1);
 }
 
 export const getPictureSelector = createSelector(
   getPictureDataSelector,
   (history) => {
-    return {
-      ...history[history.length - 1]
-    }
+    return history.toJS();
   });

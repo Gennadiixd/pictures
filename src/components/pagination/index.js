@@ -8,7 +8,7 @@ export default function Pagination({ items, perPage, children }) {
   }
 
   const hasMoreItems = () => {
-    if (itemsPerPage < items.length) return true;
+    if (itemsPerPage < items.size) return true;
     return false;
   }
 

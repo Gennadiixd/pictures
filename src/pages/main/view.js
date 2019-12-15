@@ -3,8 +3,10 @@ import Picture from '../../components/picture';
 
 export default function View({
   fetchPicture,
-  picture: { pictureUrl }
+  picture: { pictureUrl },
+  // ...picture
 }) {
+  // console.log(picture)
   return (
     <>
       <Picture

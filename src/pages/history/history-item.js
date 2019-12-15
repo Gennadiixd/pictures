@@ -21,11 +21,6 @@ export default function HistoryItem({
           {...{ pictureUrl }}
           element='-history-image'
         />
-        {/* <div
-          className="-btn-delete"
-        >
-
-        </div> */}
         <button
           className="-btn-delete"
           onClick={fireHandler}
