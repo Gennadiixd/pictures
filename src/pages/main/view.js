@@ -7,7 +7,7 @@ export default function View({
   picture: { pictureUrl },
   loading,
 }) {
-  
+
   const getDisabledStyle = () => {
     if (loading) {
       return '--disabled';
@@ -16,7 +16,7 @@ export default function View({
 
   return (
     <>
-      <div className='main-image-container' >
+      <div className='main-image-container col-11' >
         {loading
           ? (
             <Spinner />

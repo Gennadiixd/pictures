@@ -2,6 +2,12 @@
   padding: 4.9rem 0;
 }
 
+@media(max-width: 768px) {
+  .body {
+    flex-direction: column;
+  }
+}
+
 .history-date-time {
   text-align: left;
   font: Regular 22px/25px Roboto;
