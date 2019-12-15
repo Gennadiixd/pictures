@@ -5,9 +5,7 @@ import LayoutMain from '../../pages/layout/layout-main';
 
 export default function PictureRoutes() {
   return (
-    <LayoutMain
-      routesConfig={routes}
-    >
+    <LayoutMain>
       <Switch>
         <Route {...routes.main} />
         <Route {...routes.history} />

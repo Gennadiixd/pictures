@@ -1,12 +1,11 @@
 export const pagesMap = {
-  '/': 'main',
-  '/history': 'history',
+  '/': 'Главная',
+  '/history': 'История',
   getPageName(path) {
     return this[path];
   }
 }
 
-export const getCurrentPageName = (pathname, routesConfig) => {
-  const pageNow = pagesMap.getPageName(pathname);
-  return routesConfig[pageNow].name;
+export const getCurrentPageName = (pathname) => {
+  return pagesMap.getPageName(pathname);
 }

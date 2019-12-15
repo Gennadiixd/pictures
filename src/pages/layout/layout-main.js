@@ -3,7 +3,7 @@ import { getCurrentPageName } from '../../helpers/pages-helper';
 import { useHistory } from "react-router-dom";
 import Icon from "../../components/icon";
 
-export default function LayoutMain({ children, routesConfig }) {
+export default function LayoutMain({ children }) {
   let history = useHistory();
   const { location: { pathname } } = history
 
@@ -36,7 +36,7 @@ export default function LayoutMain({ children, routesConfig }) {
           {!isMainPage() && (
             <BackButton />
           )}
-          <p> {getCurrentPageName(pathname, routesConfig)}</p>
+          <p> {getCurrentPageName(pathname)}</p>
         </div>
         <div className="col-6 col-xs-11 l-page-container">
           {children}
