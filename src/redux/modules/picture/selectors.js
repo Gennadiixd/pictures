@@ -20,7 +20,7 @@ export const getHistory = (state) => {
 
 export const getPictureDataSelector = (state) => {
   const history = getIn(state, ['picture', 'history'], M.history);
-  if (history.size !== 0){
+  if (history.size !== 0) {
     return history.get(-1);
   }
   return M.history.get(-1);
@@ -28,6 +28,10 @@ export const getPictureDataSelector = (state) => {
 
 export const getPictureSelector = createSelector(
   getPictureDataSelector,
-  (history) => {
-    return history.toJS();
+  getErrorSelector,
+  (historyElement, error) => {
+    if (error) {
+      return M.error;
+    }
+    return historyElement.toJS();
   });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { getCurrentPageName } from '../../helpers/pages-helper';
 import { useHistory } from "react-router-dom";
-import arrow from '../../assets/svg/arrow.svg'
+import Icon from "../../components/icon";
 
 export default function LayoutMain({ children, routesConfig }) {
   let history = useHistory();
@@ -18,27 +18,27 @@ export default function LayoutMain({ children, routesConfig }) {
 
   const BackButton = () => {
     return (
-      <div className="btn-container">
+      <div className="-btn-container">
         <button
           onClick={goBack}
-          className="btn btn-go-back"
+          className="-btn -btn-go-back"
         >
-          <img src={arrow} className="-icon" />
+          <Icon type="arrow" />
         </button>
       </div>
     )
   }
 
   return (
-    <div className="col-12 -centering-main-axis">
-      <div className="col-11 --framed">
-        <div className="col-2">
+    <div className="col-12 --centering-main-axis">
+      <div className="col-11 body --framed">
+        <div className="col-3 --centering-main-axis">
           {!isMainPage() && (
             <BackButton />
           )}
-          {getCurrentPageName(pathname, routesConfig)}
+          <p> {getCurrentPageName(pathname, routesConfig)}</p>
         </div>
-        <div className="col-8 l-page-container">
+        <div className="col-6 l-page-container">
           {children}
         </div>
       </div>

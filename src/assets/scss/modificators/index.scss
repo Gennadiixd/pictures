@@ -1,0 +1,30 @@
+.--centering-main-axis {
+  justify-content: center;
+}
+
+.--centering-cross-axis {
+  align-items: center;
+}
+
+.--centering-all {
+  justify-content: center;
+  align-items: center;
+}
+//Due to NavLink without --
+.active {
+  color: black;
+}
+
+.--container {
+  display: flex;
+}
+
+.--framed {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+}
+
+.--disabled {
+  opacity: 0.3;
+  cursor: wait;
+}

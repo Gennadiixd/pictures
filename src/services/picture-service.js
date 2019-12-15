@@ -3,5 +3,11 @@ const API =
 
 export const requestPictureAPI = () => {
   return fetch(API)
-    .then(res => res.json())
+    .then(res => {
+      if (res.status !== 200) {
+        throw new Error(`response status ${res.status}`);
+      }
+      return res.json();
+    })
+    .catch(error => error)
 } 

@@ -1,9 +1,7 @@
 import React from 'react'
 
-export default function Picture({ pictureUrl, element }) {
+export default function Picture({ pictureUrl }) {
   return (
-    <div className={`${element}-container`} >
-      <img src={pictureUrl} className={`-image`} alt='random element'/>
-    </div>
+    <img src={pictureUrl} className='-image' alt='random element' />
   )
 }

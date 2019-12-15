@@ -1,0 +1,55 @@
+.body{
+  padding: 4.9rem 0;
+}
+
+.history-date-time {
+  text-align: left;
+  font: Regular 22px/25px Roboto;
+  letter-spacing: 0;
+  color: #707070;
+}
+
+.history-description-text {
+  text-align: left;
+  font: Bold 16px/18px Roboto;
+  letter-spacing: 0;
+  color: #707070;
+}
+
+.history-description-container {
+  flex-direction: column;
+  p {
+    margin:0 0 0.5rem 0;
+  }
+}
+
+.history-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-image-container {
+  max-width: 450px;
+  width: 100%;
+  height: 260px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 1.9rem;
+}
+
+.history-image-container {
+  margin-right: 1.7rem;
+  width: 168px;
+  height: 88px;
+  overflow: hidden;
+  display: flex;
+  margin-bottom: 1.9rem;
+}
+
+.history-item-container{
+  display: flex;
+}
+
+.history-container{
+  flex-direction: column;
+}

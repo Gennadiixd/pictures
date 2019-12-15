@@ -1,5 +1,5 @@
 import * as C from './consts';
-import { put, call, takeEvery } from "redux-saga/effects";
+import { put, call, debounce } from "redux-saga/effects";
 import { requestPictureAPI } from '../../../services/picture-service';
 import { getDateTimeNow } from '../../../helpers/date-time';
 
@@ -24,16 +24,17 @@ const requestPictureErrorAC = () => {
 }
 
 export function* watchRequestPicture() {
-  yield takeEvery(C.GET_PICTURE, fetchPictureAC);
+  yield debounce(500, C.GET_PICTURE, fetchPictureSaga);
 }
 
-export function* fetchPictureAC() {
+export function* fetchPictureSaga() {
   try {
-    yield put(requestPictureAC())
-    const data = yield call(requestPictureAPI)
-    yield put(requestPictureSuccessAC(data))
+    yield put(requestPictureAC());
+    const data = yield call(requestPictureAPI);
+    yield put(requestPictureSuccessAC(data));
   } catch (error) {
-    yield put(requestPictureErrorAC())
+    console.log(error)
+    yield put(requestPictureErrorAC());
   }
 }
 

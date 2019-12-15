@@ -22,10 +22,10 @@ export class EventListener {
   }
 
   listen = (event) => {
-    if (this.canHandle(event.action)) {
+    if (this.canHandle(event.target.action)) {
       event.stopPropagation();
       event.nativeEvent.stopPropagation();
-      this.handle(event.action, event.payload);
+      this.handle(event.target.action, event.target.payload);
     }
   }
 }

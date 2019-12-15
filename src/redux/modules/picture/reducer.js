@@ -31,6 +31,4 @@ const picture = (state = initState, action) => {
   }
 }
 
-export const getData = state => state.getIn(["loading", "error", "history", "initState"]);
-
 export default picture;

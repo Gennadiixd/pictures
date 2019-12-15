@@ -4,8 +4,8 @@ import Link from '../Link';
 
 export default function Header() {
   return (
-    <div className="-centring-all col-12 -centering-main-axis">
-      <nav className="header col-11">
+    <div className="col-12 --centering-main-axis">
+      <nav className="header col-11 --framed">
         <Link to={routes.main} className='nav-link' />
         <Link to={routes.history} className='nav-link' />
       </nav>

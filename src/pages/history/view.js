@@ -8,7 +8,7 @@ export default function History({ history, removeHistoryItem }) {
 
   return (
     <div
-      className="col-10 history-container"
+      className="col-11 history-container"
       onClick={eventListener.listen}
     >
       <Pagination

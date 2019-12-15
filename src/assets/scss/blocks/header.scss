@@ -1,6 +1,4 @@
 .header{
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  border: 1px solid #707070;
   margin: 1.3rem 0 2.5rem  0;
 }
 
@@ -8,127 +6,15 @@ nav {
   display: flex;
   a {
     margin: 1.3rem 1.9rem;
+    color: #707070;
+    text-decoration: none;
   }
 }
 
-//TODO: remove to approptiate folder!!!
-
-.-btn-delete{
-  position: absolute;
-  margin: 60px 0px 0px 130px;
-  border: none;
-}
-
-.-icon{
-  width: 16px;
-  height: 16px;
-}
-
-.-history-item-container{
-  display: flex;
-}
-.history-container{
-  flex-direction: column;
-}
-
-.btn-container{
-  margin-right: 0.5rem;
-}
-
-.btn-go-back{
-  cursor: pointer;
-  border: none;
-  background: transparent;
-}
-
-.--framed{
-  background: #FFFFFF 0% 0% no-repeat padding-box;
-  border: 1px solid #707070;
-  padding: 4.9rem 1.8rem;
-}
-.-description-text{
-  text-align: left;
-  font: Bold 16px/18px Roboto;
-  letter-spacing: 0;
+p {
+  margin: 0;
+  padding: 0;
   color: #707070;
-}
-
-.-date-time{
-  text-align: left;
   font: Regular 22px/25px Roboto;
   letter-spacing: 0;
-  color: #707070;
-}
-
-.-description{
-  flex-direction: column;
-  p {
-    margin:0 0 0.5rem 0;
-  }
-}
-
-.content-main{
-  flex-direction: column;
-}
-
-.-history-item{
-  display: flex;
-  flex-direction: row;
-}
-
-.btn-primary{
-  background: #006896 0% 0% no-repeat padding-box;
-  box-shadow: 0px 2px 2px #0000003D;
-  border-radius: 2px;
-  color: white;
-  border: 0;
-  width: 10.5rem;
-  height: 2.3rem;
-}
-//TODO: DRY
-.-history-image-container{
-  margin-right: 1.7rem;
-  width: 168px;
-  height: 88px;
-  overflow: hidden;
-  display: flex;
-  margin-bottom: 1.9rem;
-}
-
-.-main-image-container{
-  width: 416px;
-  height: 252px;
-  overflow: hidden;
-  display: flex;
-  margin-bottom: 1.9rem;
-}
-
-.-image{
-  width: 100%;
-  height: auto;
-}
-
-.container {
-  display: flex;
-}
-
-.-centering-main-axis{
-  justify-content: center;
-}
-
-.-centering-cross-axis{
-  align-items: center;
-}
-
-.-centering-all{
-  justify-content: center;
-  align-items: center;
-}
-
-.active {
-  color: black;
-}
-
-a {
-  color: #707070;
 }

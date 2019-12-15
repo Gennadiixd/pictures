@@ -4,11 +4,11 @@ export default function Pagination({ items, perPage, children }) {
   const [itemsPerPage, setItemsPerPage] = useState(perPage);
 
   const showMoreItems = () => {
-    setItemsPerPage(perPage + perPage);
+    setItemsPerPage(itemsPerPage + perPage);
   }
 
   const hasMoreItems = () => {
-    if (itemsPerPage < items.size) return true;
+    if (itemsPerPage < items.length) return true;
     return false;
   }
 
@@ -25,7 +25,7 @@ export default function Pagination({ items, perPage, children }) {
       {hasMoreItems() && (
         <button
           onClick={showMoreItems}
-          className="btn btn-primary"
+          className="-btn -btn-primary"
         >
           Show More
         </button>
