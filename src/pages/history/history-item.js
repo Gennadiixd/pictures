@@ -23,7 +23,7 @@ export default function HistoryItem({
           />
         </div>
         <button
-          className="-btn-delete"
+          className="-btn -btn-delete"
           onClick={fireHandler}
         >
           <Icon type="garbageBin" />
