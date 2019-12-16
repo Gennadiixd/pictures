@@ -1,6 +1,7 @@
 import React from 'react';
 import Picture from '../../components/picture';
 import Spinner from '../../components/spinner';
+import Button from '../../components/button';
 
 export default function View({
   fetchPicture,
@@ -28,13 +29,13 @@ export default function View({
           )
         }
       </div>
-      <button
+      <Button
+        className={`-btn-primary ${getDisabledStyle()}`}
         onClick={fetchPicture}
-        className={`-btn -btn-primary ${getDisabledStyle()}`}
         disabled={!!getDisabledStyle()}
       >
         Загрузить
-      </button>
+      </Button>
     </>
   )
 }

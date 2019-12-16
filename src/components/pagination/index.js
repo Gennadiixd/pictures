@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '../../components/button.js';
 
 export default function Pagination({ items, perPage, children }) {
   const [itemsPerPage, setItemsPerPage] = useState(perPage);
@@ -23,12 +24,12 @@ export default function Pagination({ items, perPage, children }) {
         })
       }
       {hasMoreItems() && (
-        <button
+        <Button
+          className="-btn-primary"
           onClick={showMoreItems}
-          className="-btn -btn-primary"
         >
           Show More
-        </button>
+        </Button>
       )}
     </>
   )
