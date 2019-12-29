@@ -1,12 +1,16 @@
 import React, {useContext, useRef} from 'react';
 import Practice from './index';
 
-export default ({children}) => {
+export default ({children, onChange}) => {
   const practiceContext = useContext(Practice.Context);
   const itemRef = useRef();
   const items = React.Children.map(children, (child) => {
     return React.cloneElement(child, {count: practiceContext.count});
   });
+
+  for (let i = items.length - 1; i > 0; i--) {
+    items.splice(i, 0, '/')
+  }
   // items.push(1);
   // items = React.Children.toArray(children);
   return (
@@ -14,7 +18,7 @@ export default ({children}) => {
       <div>{items}</div>
       <input
         ref={itemRef}
-        onChange={() => console.log(itemRef.current.value)}
+        onChange={() => onChange(itemRef.current.value)}
       />
     </>
   );

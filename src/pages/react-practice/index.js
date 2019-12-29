@@ -11,9 +11,17 @@ const reducer = (state, action) => {
       return {count: state.count - 1};
     case 'RESET':
       return {count: initState.count};
+    case 'SET':
+      return {count: action.payload};
     default:
       return state;
   }
+};
+
+const filterInt = function (value) {
+  if (/^(\-|\+)?([0-9]+|Infinity)$/.test(value))
+    return Number(value);
+  return NaN;
 };
 
 export default function Practice() {
@@ -23,10 +31,16 @@ export default function Practice() {
   const onInc = () => dispatch({type: 'INCREMENT'});
   const onDec = () => dispatch({type: 'DECREMENT'});
   const onReset = () => dispatch({type: 'RESET'});
+  const onSet = (payload) => {
+    const value = filterInt(payload);
+    if (!isNaN(value)) {
+      dispatch({type: 'SET', payload: value});
+    }
+  };
   return (
     <Practice.Context.Provider value={state}>
       {/*<div>{state.count}</div>*/}
-      <SomeBlock>
+      <SomeBlock onChange={onSet}>
         <Cmp/>
         <Cmp/>
         <Cmp/>
