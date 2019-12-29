@@ -6,11 +6,11 @@ export const main = {
   exact: true,
   component: Main,
   name: 'Главная',
-}
+};
 
 export const history = {
   path: '/history',
   exact: true,
   component: History,
   name: 'История',
-}
+};

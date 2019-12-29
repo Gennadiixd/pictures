@@ -3,6 +3,6 @@ import PictureRoutes from './picture';
 
 export default function Routes() {
   return (
-    <PictureRoutes />
+    <PictureRoutes/>
   )
 }

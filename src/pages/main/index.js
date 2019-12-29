@@ -9,7 +9,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchPicture: bindActionCreators(getPictureAC, dispatch),
   }
-}
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -17,6 +17,6 @@ const mapStateToProps = (state) => {
     loading: S.getLoadingSelector(state),
     error: S.getErrorSelector(state),
   }
-}
+};
 
 export default (connect(mapStateToProps, mapDispatchToProps)(View));

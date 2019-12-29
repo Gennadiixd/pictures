@@ -13,7 +13,7 @@ export default function View({
     if (loading) {
       return '--disabled';
     }
-  }
+  };
 
   return (
     <>

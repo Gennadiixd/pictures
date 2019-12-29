@@ -5,16 +5,15 @@ import Button from "../../components/button.js";
 
 export default function LayoutMain({ children }) {
   let history = useHistory();
-  const { location: { pathname } } = history
+  const { location: { pathname } } = history;
 
   const isMainPage = () => {
-    if (pathname === '/') return true;
-    return false;
-  }
+    return pathname === '/';
+  };
 
   const goBack = () => {
     history.goBack();
-  }
+  };
 
   const BackButton = () => {
     return (
@@ -27,7 +26,7 @@ export default function LayoutMain({ children }) {
         </Button>
       </div>
     )
-  }
+  };
 
   return (
     <div className="col-12 --centering-main-axis">
